@@ -16,6 +16,24 @@ import com.bobocode.util.ExerciseNotCompletedException;
  */
 public class LinkedList<T> implements List<T> {
 
+    static final class Node<T> {
+        private T element;
+        private Node<T> next;
+
+        static <T> Node<T> valueOf(T element) {
+            return new Node<>(element);
+        }
+
+        private Node(T element) {
+            this.element = element;
+        }
+    }
+
+    private Node<T> next;
+    private Node<T> tail;
+    private int size;
+
+
     /**
      * This method creates a list of provided elements
      *
